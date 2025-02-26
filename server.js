@@ -1,15 +1,20 @@
+require('dotenv').config(); // Load .env variables
 const express =  require('express');
 const server =  express();
 var connection =  require('./config/db-mysql')
 const bodyParser =  require('body-parser');  
+const swaggerUi = require('swagger-ui-express');
+
+const swagger =  require('./swagger')
+server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swagger));
 
 //this will use as a middleware of our application to fetch json object to our body request
-server.use(bodyParser.json());
+server.use(express.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
-server.use(function (req, res, next) {
+server.use((req, res, next) => {
 	// Website you wish to allow to connect when we make our Vue.js UI
-	res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+	res.setHeader('Access-Control-Allow-Origin', process.env.LOCAL_HOST);
 
 	// Request methods you wish to allow
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -31,8 +36,8 @@ server.get('/hello', (req, res) => {
 
 connection.init((dbConnection) => {
     //we will place our `server.listen` here
-    server.listen('8080', function () {
-        console.log('Listening to port 8080')
+    server.listen(process.env.PORT, function () {
+        console.log('Listening to port ' + process.env.PORT)
     })
 
     const loadModules = (server, dbConnection, callback) => {

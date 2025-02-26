@@ -1,12 +1,14 @@
-var mysql = require('mysql2');
+require('dotenv').config(); // Load environment variables
 
-database  = {
-	user: 'root',
-	password: 'Superhero03',
-	host: '127.0.0.1',
-	database: 'test',
-	port: 3306,
-}
+const mysql = require('mysql2');
+
+const database = {
+	user: process.env.DB_USER,
+	password: process.env.DB_PASSWORD,
+	host: process.env.DB_HOST,
+	database: process.env.DB_DATABASE,
+	port: process.env.DB_PORT
+};
 
 exports.init = (connect_callback) => {
     console.log("Initializing module db-mysql");
