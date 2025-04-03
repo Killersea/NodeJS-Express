@@ -1,4 +1,4 @@
-# NodeJS Express
+![image](https://github.com/user-attachments/assets/c575897a-e122-40ff-bc8a-c26da4c361bc)# NodeJS Express
 
 A simple Node.js and Express application with MySQL integration.
 
@@ -74,4 +74,24 @@ POST /api/user #This will create a new user in the system. Only the user_fname a
 
 ---
 ## Postman
-![Get User](https://imgur.com/a/y0VFjNs)
+Get User
+
+![Get User](https://i.imgur.com/MxZWkbQ.png)
+
+Update User
+
+![Update User](https://i.imgur.com/OqdRBoE.png)
+
+Delete User
+
+![Delete User](https://i.imgur.com/oRromow.png)
+
+Generate All User
+
+![Generate All User](https://i.imgur.com/NxXAREu.png)
+
+Create User
+
+![Create](https://i.imgur.com/TxJ3sOq.png)
+
+
