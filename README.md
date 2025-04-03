@@ -71,3 +71,7 @@ POST /api/user #This will create a new user in the system. Only the user_fname a
   "user_isdel": 0
 }
 ```
+
+---
+## Postman
+![Get User](https://imgur.com/a/y0VFjNs)
