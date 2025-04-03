@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/c575897a-e122-40ff-bc8a-c26da4c361bc)# NodeJS Express
+# NodeJS Express
 
 A simple Node.js and Express application with MySQL integration.
 
